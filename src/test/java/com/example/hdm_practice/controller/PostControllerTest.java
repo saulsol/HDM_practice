@@ -24,15 +24,16 @@ class PostControllerTest {
     @DisplayName("/post 요청시 hi 출력")
     void test() throws Exception  {
         mockMvc.perform(MockMvcRequestBuilders.post("/posts")
-                        .contentType(MediaType.APPLICATION_FORM_URLENCODED ) //application/x-www-form-urlencoded.
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"title\": \"제목입니다.\", \"content\": \"내용입니다.\"}")
 
-                ) // application/json
+                )
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string("HI"))
                 .andDo(print());
     }
     // 대소문자가 달라도 틀렸다고 에러를 띄움
-    // MockMVC는 기본적으로 application/json
+    // MockMVC는  application/json 타입으로 변경을 해야한다.
     // contentType 이 바뀌어도 기본적으로 Test 통과가 된다.
 
 
