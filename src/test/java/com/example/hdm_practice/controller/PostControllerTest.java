@@ -35,6 +35,7 @@ class PostControllerTest {
     // 대소문자가 달라도 틀렸다고 에러를 띄움
     // MockMVC는  application/json 타입으로 변경을 해야한다.
     // contentType 이 바뀌어도 기본적으로 Test 통과가 된다.
+    //
 
 
 }
