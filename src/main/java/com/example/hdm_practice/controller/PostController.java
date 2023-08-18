@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PostController {
 
-    @PostMapping("/posts")
-    public String getMappingPractice(@RequestBody PostCreateDto postCreateDto){
+    @GetMapping ("/serverTest")
+    public String getMappingPractice(){
         return "HI";
     }
 
