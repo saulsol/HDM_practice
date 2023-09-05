@@ -9,6 +9,8 @@ public class PostController {
 
     @GetMapping ("/serverTest")
     public String getMappingPractice(){
+        System.out.println("컨트롤러 동작");
+
         return "HI";
     }
 
