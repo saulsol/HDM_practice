@@ -21,7 +21,7 @@ class MemberServiceTest {
     void self_invocation(){
 
         assertThat(Enhancer.isEnhanced(memberService.getClass())).isTrue();
-        memberService.doSomething(new Member("LimSol"));
+        memberService.doSomething(new Member("e"));
 
     }
 
