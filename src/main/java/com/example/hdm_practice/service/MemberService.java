@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class MemberService {
 
     private final MemberRepository memberRepository;
-    @Transactional
+
     public void doSomething(final Member member){
 
         Member parentMember = new Member("parent");
@@ -21,7 +21,7 @@ public class MemberService {
         saveMember(member);
     }
 
-
+    @Transactional
     public void saveMember(final Member member){
         memberRepository.save(member);
 
