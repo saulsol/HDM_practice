@@ -4,6 +4,7 @@ import com.example.hdm_practice.entity.Member;
 import com.example.hdm_practice.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -13,22 +14,17 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public void doSomething(final Member member){
 
-        Member parentMember = new Member("parent");
+    public void doSomething(){
 
-        memberRepository.save(parentMember);
-        saveMember(member);
+
+
     }
 
     @Transactional
-    public void saveMember(final Member member){
+    public void createMember(){
+        final Member member = new Member("A");
         memberRepository.save(member);
-
-        if(member.getMemberName().equals("e")){
-            throw new RuntimeException("ERROR");
-        }
-
 
     }
 }
