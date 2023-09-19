@@ -16,21 +16,21 @@ import java.util.stream.Collectors;
 @RestController
 public class MemberController {
 
-    @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody MemberCreateDto memberCreateDto,
-                                       BindingResult bindingResult){
-
-        if(bindingResult.hasErrors()){
-            List<String> errors = bindingResult.getAllErrors()
-                    .stream()
-                    .map(DefaultMessageSourceResolvable::getDefaultMessage)
-                    .collect(Collectors.toList());
-            return ResponseEntity.ok().body(errors);
-        }
-
-
-        return ResponseEntity.ok().body("회원 등록 성공: " + memberCreateDto.getName());
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<?> registerUser(@Valid @RequestBody MemberCreateDto memberCreateDto,
+//                                       BindingResult bindingResult){
+//
+//        if(bindingResult.hasErrors()){
+//            List<String> errors = bindingResult.getAllErrors()
+//                    .stream()
+//                    .map(DefaultMessageSourceResolvable::getDefaultMessage)
+//                    .collect(Collectors.toList());
+//            return ResponseEntity.ok().body(errors);
+//        }
+//
+//
+//        return ResponseEntity.ok().body("회원 등록 성공: " + memberCreateDto.getName());
+//    }
 
     @PostMapping("/registerNoBindingResult")
     public ResponseEntity<?> registerUser2(@Valid @RequestBody MemberCreateDto memberCreateDto){
